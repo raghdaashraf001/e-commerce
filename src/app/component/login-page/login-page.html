@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Login Now :</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+      <div class="form-group">
+        <label for="email">email :</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          placeholder="Enter your email"
+          ngModel
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">password :</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          placeholder="Enter your password"
+          ngModel
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success login-btn" [disabled]="!loginForm.valid">
+        Login
+      </button>
+    </form>
+  </div>
+</div>

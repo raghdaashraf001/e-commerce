@@ -1,0 +1,54 @@
+@if (product) {
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let image of product.images">
+          <img [src]="image" class="w-100" [alt]="product.title" />
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-md-6">
+      <div class="product-details">
+        <h2>{{ product.title }}</h2>
+        <p class="text-muted">{{ product.description }}</p>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="price">
+            <h4 class="text-main">{{ product.price | currency : 'USD' }}</h4>
+          </div>
+          <div class="rating">
+            <fa-icon [icon]="starIcon" class="rating-color"></fa-icon>
+            <span class="ms-1">{{ product.ratingsAverage }}</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn-main me-3" (click)="addToCart()">Add to Cart</button>
+          <button class="btn" [class.text-danger]="isLiked" (click)="toggleWishlist()">
+            <fa-icon [icon]="heartIcon"></fa-icon>
+          </button>
+        </div>
+
+        <div class="product-meta mt-4">
+          <p><strong>Brand:</strong> {{ product.brand.name }}</p>
+          <p><strong>Category:</strong> {{ product.category.name }}</p>
+          <p *ngIf="product.quantity > 0" class="text-main">
+            In Stock: {{ product.quantity }} items
+          </p>
+          <p *ngIf="product.quantity === 0" class="text-danger">Out of Stock</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-clip-rotate"
+  [fullScreen]="true"
+  [name]="spinnerName"
+>
+</ngx-spinner>

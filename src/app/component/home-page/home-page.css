@@ -1,0 +1,85 @@
+/* Header Section Styles */
+.header-section {
+  margin-top: 20px;
+}
+
+.main-slider {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main-slider ::ng-deep .carousel-inner {
+  border-radius: 10px;
+}
+
+.main-slider ::ng-deep .carousel-item {
+  height: 400px;
+}
+
+.main-slider ::ng-deep .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-slider ::ng-deep .carousel-control-prev,
+.main-slider ::ng-deep .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 15px;
+}
+
+.main-slider ::ng-deep .carousel-control-prev-icon,
+.main-slider ::ng-deep .carousel-control-next-icon {
+  background-color: var(--main-color);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.side-promo {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 190px;
+}
+
+.side-promo img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.side-promo:hover img {
+  transform: scale(1.05);
+}
+
+/* Categories Carousel Styles */
+.categories-carousel {
+  padding: 1rem 0;
+}
+
+.categories-carousel ::ng-deep .carousel-indicators {
+  display: none;
+}
+
+.categories-carousel ::ng-deep .carousel-control-prev,
+.categories-carousel ::ng-deep .carousel-control-next {
+  width: 5%;
+}
+
+.categories-carousel ::ng-deep .carousel-control-prev-icon,
+.categories-carousel ::ng-deep .carousel-control-next-icon {
+  background-color: var(--main-color);
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+
+::ng-deep .carousel-control-prev {
+  left: -75px;
+}
+
+::ng-deep .carousel-control-next {
+  right: -75px;
+}

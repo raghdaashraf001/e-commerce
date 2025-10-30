@@ -1,0 +1,20 @@
+.category-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-info {
+  background-color: var(--light-color);
+}
+
+img {
+  height: 200px;
+  object-fit: cover;
+}

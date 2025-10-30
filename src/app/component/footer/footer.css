@@ -1,0 +1,22 @@
+.form-control:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 0.25rem rgba(10, 173, 10, 0.25);
+}
+
+.btn-success {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.btn-success:hover {
+  background-color: #11bd11;
+  border-color: #11bd11;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.share-app-btn{
+    width: 20%;
+}

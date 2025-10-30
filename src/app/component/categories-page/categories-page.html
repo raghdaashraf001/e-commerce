@@ -1,0 +1,11 @@
+<div class="container py-5">
+  <div class="row g-4">
+    <!-- Category Card -->
+    @let categories = categories$ | async; @if (categories) { @for (category of categories; track
+    category._id) {
+    <div class="col-md-4 col-lg-3">
+      <app-card-name-view [name]="category.name" [imageUrl]="category.image"></app-card-name-view>
+    </div>
+    } }
+  </div>
+</div>

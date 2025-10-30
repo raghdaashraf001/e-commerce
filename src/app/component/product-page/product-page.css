@@ -1,0 +1,23 @@
+.product-details {
+  padding: 20px;
+}
+
+.actions {
+  margin: 20px 0;
+}
+
+.price del {
+  font-size: 0.9em;
+}
+
+:host ::ng-deep .carousel {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+:host ::ng-deep .carousel img {
+  object-fit: contain;
+  height: 400px;
+  background-color: white;
+}

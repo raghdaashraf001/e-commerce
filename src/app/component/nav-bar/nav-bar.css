@@ -1,0 +1,19 @@
+.navbar-brand{
+    width: 160px;
+}
+
+.left-section{
+    width: 160px;
+}
+
+.logOut{
+    cursor: pointer;
+}
+
+.cart-badge{
+    transform: translate(-66%, -20%) !important;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}

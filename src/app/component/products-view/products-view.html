@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row serach-container"></div>
+  <div class="row prodcuts container">
+    @for (item of products; track $index) {
+    <div class="col-md-3">
+      <app-product-view
+        [product]="item"
+        [liked]="wishListService.isProductLiked(item._id)"
+      ></app-product-view>
+    </div>
+    }
+  </div>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-clip-rotate"
+  [fullScreen]="true"
+  [name]="spinnerName"
+>
+</ngx-spinner>

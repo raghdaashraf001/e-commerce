@@ -1,0 +1,59 @@
+<div class="container py-5">
+  <h2 class="mb-4">My Wishlist</h2>
+  @if (wishlistService.wishList$ | async; as wishlist) { @if (wishlist.data.length > 0) {
+  <div class="row">
+    <!-- Wishlist Items -->
+    <div class="col-12">
+      <div class="bg-main-light p-4 rounded-3">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="mb-0">Wishlist Items ({{ wishlist.data.length }})</h4>
+        </div>
+
+        <!-- Wishlist Items List -->
+        <div class="wishlist-items">
+          @for (item of wishlist.data; track $index) {
+          <div class="row border-bottom py-3">
+            <div class="col-md-2">
+              <img
+                routerLink="/products/{{ item._id }}"
+                [src]="item.imageCover"
+                class="w-100 product-image"
+                [alt]="item.title"
+              />
+            </div>
+            <div class="col-md-10">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h5 routerLink="/products/{{ item._id }}" class="h6 product-title">
+                    {{ item.title }}
+                  </h5>
+                  <p class="text-main mb-0">Price: {{ item.price }} EGP</p>
+                </div>
+                <div class="d-flex align-items-center">
+                  <button class="btn btn-main me-2" (click)="addToCart(item)">
+                    <fa-icon [icon]="iconShoppingCart" class="me-1"></fa-icon>
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-outline-danger" (click)="removeFromWishlist(item._id)">
+                    <fa-icon [icon]="iconTrash" class="me-1"></fa-icon>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  } @else {
+  <!-- Empty Wishlist Message -->
+  <div class="row text-center py-5">
+    <fa-icon [icon]="iconHeart" class="fa-3x text-danger mb-3"></fa-icon>
+    <h3>Your wishlist is empty</h3>
+    <p class="text-muted">Add items that you like to your wishlist!</p>
+    <a routerLink="/products" class="btn btn-main w-50 m-auto">Start Shopping</a>
+  </div>
+  } }
+</div>

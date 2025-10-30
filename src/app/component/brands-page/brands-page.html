@@ -1,0 +1,10 @@
+<div class="container py-5">
+  <div class="row g-4">
+    <!-- Category Card -->
+    @let brands = brands$ | async; @if (brands) { @for (brand of brands; track brand._id) {
+    <div class="col-md-4 col-lg-3">
+      <app-card-name-view [name]="brand.name" [imageUrl]="brand.image"></app-card-name-view>
+    </div>
+    } }
+  </div>
+</div>
